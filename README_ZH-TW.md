@@ -30,7 +30,7 @@
 
 ## 簡介
 
-這是一個使用 [FastMCP](https://fastmcp.wiki) 自動生成的 MCP 伺服器，用於存取 Ebay Data Scraper API。
+這是一個 MCP 伺服器，用於存取 Ebay Data Scraper API。
 
 - **PyPI 套件名**: `bach-ebay_data_scraper`
 - **版本**: 1.0.0
@@ -108,8 +108,8 @@ export API_KEY="your_api_key_here"
 {
   "mcpServers": {
     "ebay_data_scraper": {
-      "command": "python",
-      "args": ["E:\path\to\ebay_data_scraper\server.py"],
+      "command": "uvx",
+      "args": ["--from", "bach-ebay_data_scraper", "bach_ebay_data_scraper"],
       "env": {
         "API_KEY": "your_api_key_here"
       }
@@ -251,7 +251,6 @@ Without params
 
 ## 技术栈
 
-- **FastMCP**: 快速、Pythonic 的 MCP 服务器框架
 - **传输协议**: stdio
 - **HTTP 客户端**: httpx
 

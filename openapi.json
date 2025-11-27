@@ -1,0 +1,271 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Ebay Data Scraper",
+    "version": "1.0.0",
+    "description": "RapidAPI: augsmachado/ebay-data-scraper"
+  },
+  "servers": [
+    {
+      "url": "https://ebay-data-scraper.p.rapidapi.com"
+    }
+  ],
+  "paths": {
+    "/products": {
+      "get": {
+        "summary": "Search products",
+        "description": "This endpoint can be used to search a products based in the name.  The USA subdomain not need to be selected, because it is the mais domain.  **Allowed *country* params** - australia - austria - canada - france - germany - hong kong - ireland - italy - malaysia - netherlands - philippines - poland - singapore - spain - switzerland - united kingdom",
+        "operationId": "search_products",
+        "parameters": [
+          {
+            "name": "product_name",
+            "in": "query",
+            "required": true,
+            "description": "Example value: paper ink",
+            "schema": {
+              "type": "string",
+              "default": null,
+              "enum": null
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "description": "Example value: canada",
+            "schema": {
+              "type": "string",
+              "default": null,
+              "enum": null
+            }
+          },
+          {
+            "name": "buy_now",
+            "in": "query",
+            "required": false,
+            "description": "Example value: true",
+            "schema": {
+              "type": "string",
+              "default": null,
+              "enum": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "Get product details",
+        "description": "This endpoint request a specific product infos. You must provider in each request only one parameter: product_id  The USA subdomain not need to be selected, because it is the mais domain.  **Allowed *country* params** - australia - austria - canada - france - germany - hong kong - ireland - italy - malaysia - netherlands - philippines - poland - singapore - spain - switzerland - united kingdom",
+        "operationId": "get_product_details",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "description": "Example value: australia",
+            "schema": {
+              "type": "string",
+              "default": null,
+              "enum": null
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "description": "Example value: 326150465337",
+            "schema": {
+              "type": "string",
+              "default": null,
+              "enum": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deals": {
+      "get": {
+        "summary": "Request the daily global featured deals",
+        "description": "Request the daily global featured deals",
+        "operationId": "request_the_daily_global_featured_deals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deals/fashion": {
+      "get": {
+        "summary": "Request the daily global fashion deals",
+        "description": "Request the daily global fashion deals",
+        "operationId": "request_the_daily_global_fashion_deals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deals/home": {
+      "get": {
+        "summary": "Request the daily global home deals",
+        "description": "Request the daily global home deals",
+        "operationId": "request_the_daily_global_home_deals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status/api": {
+      "get": {
+        "summary": "Request API status",
+        "description": "Request API status",
+        "operationId": "request_api_status",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/seller": {
+      "get": {
+        "summary": "Get products by seller name",
+        "description": "This endpoint get all products sold by seller where each page shows 240 new products.",
+        "operationId": "get_products_by_seller_name",
+        "parameters": [
+          {
+            "name": "seller_name",
+            "in": "query",
+            "required": true,
+            "description": "Example value: Geekstationparts",
+            "schema": {
+              "type": "string",
+              "default": null,
+              "enum": null
+            }
+          },
+          {
+            "name": "page_number",
+            "in": "query",
+            "required": false,
+            "description": "Example value: 2",
+            "schema": {
+              "type": "string",
+              "default": null,
+              "enum": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deals/tech": {
+      "get": {
+        "summary": "Request the daily global tech deals",
+        "description": "Request the daily global tech deals",
+        "operationId": "request_the_daily_global_tech_deals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status/server": {
+      "get": {
+        "summary": "Request server status",
+        "description": "Without params",
+        "operationId": "request_server_status",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-RapidAPI-Key"
+      }
+    }
+  },
+  "security": [
+    {
+      "ApiAuth": []
+    }
+  ]
+}

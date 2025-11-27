@@ -30,7 +30,7 @@ Visit **[EMCP Platform](https://sit-emcp.kaleido.guru)** now to start your MCP j
 
 ## Introduction
 
-This is an automatically generated MCP server using [FastMCP](https://fastmcp.wiki) for accessing the Ebay Data Scraper API.
+This is an MCP server for accessing the Ebay Data Scraper API.
 
 - **PyPI Package**: `bach-ebay_data_scraper`
 - **Version**: 1.0.0
@@ -108,8 +108,8 @@ export API_KEY="your_api_key_here"
 {
   "mcpServers": {
     "ebay_data_scraper": {
-      "command": "python",
-      "args": ["E:\path\to\ebay_data_scraper\server.py"],
+      "command": "uvx",
+      "args": ["--from", "bach-ebay_data_scraper", "bach_ebay_data_scraper"],
       "env": {
         "API_KEY": "your_api_key_here"
       }
